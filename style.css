@@ -17,15 +17,16 @@ body {
 }
 h2, #titulos , button, div{
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 input{
     color: blue;
     width: 150px;
-    height: 30px;
+    height: 40px;
     font-size: 20px;
     text-align: center;
+    font-weight: bold;
 }
 
 button{
@@ -44,6 +45,7 @@ button{
   }
 
 .tabla-css {
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     min-width: auto;
@@ -59,6 +61,9 @@ button{
 .tabla-css td {
     text-align: center;
     font-size: 20px;
+    padding: 12px;
+    font-weight: 500;
+    
 }
 .tabla-css tbody tr:nth-of-type(even){
  background-color: #f8c7282c;   
