@@ -1,3 +1,6 @@
+//Función para actualizar cada  segundos(5000 milisegundos)
+setInterval("iniciar()", 1000);
+
 window.onload = function () {
     document.getElementById("moneda").focus();
 }
