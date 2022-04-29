@@ -5,11 +5,12 @@
 }
 
 html {
-    background-color: #000;
+    background-color: #eaeaea;
 }
 
 body {
     max-width: 400px;
+    max-height: 1000px;
     background-color: papayawhip;
     margin: 0 auto;
 }
