@@ -45,20 +45,24 @@ function iniciar() {
         function Promediot(myArray) {
             summcompradores = 0;
             summvendedores = 0;
+            let cc = 0
+            let vv = 0
             for (let i = 0; i < myArray.length; i++) {
                 if (myArray[i].isBuyerMaker == true) {
+                    cc += 1
 
                     summcompradores += Number(myArray[i].qty);
 
                 }
                 else {
+                    vv += 1
                     summvendedores += Number(myArray[i].qty);
                 }
 
             }
 
-            document.getElementById("compradores").innerHTML = (summcompradores / myArray.length).toFixed(4);
-            document.getElementById("vendedores").innerHTML = (summvendedores / myArray.length).toFixed(4);
+            document.getElementById("vendedores").innerHTML = (summcompradores / myArray.length).toFixed(4) + '<h6>' + cc + '</h6>';
+            document.getElementById("compradores").innerHTML = (summvendedores / myArray.length).toFixed(4) + '<h6>' + vv + '</h6>';;
             //return (summ / myArray.length).toFixed(4);
         }
 

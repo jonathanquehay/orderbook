@@ -22,20 +22,27 @@ h2, #titulos , button, div{
 }
 
 #datos{
+    display: flex;
+   justify-content: center;
     text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+}
+#vs{
+    font-size: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     padding: 0;
 }
 
-#compradores{
 
-    padding: 0 auto;
-    text-align: left;
+#compradores{
     color: green;
     font-size: 20px;
+    padding: 0;
 }
 
 #vendedores{
-    text-align: right;
     color: red;
     padding: 0;
     font-size: 20px;
