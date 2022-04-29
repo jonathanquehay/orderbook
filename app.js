@@ -20,8 +20,9 @@ document.getElementById("calcular").addEventListener("click", iniciar)
 function iniciar() {
     const endpoint = 'https://fapi.binance.com/fapi/v1/depth?symbol=' + document.getElementById("moneda").value + 'USDT&contractType=PERPETUAL'
 
-    const trades = 'https://fapi.binance.com/fapi/v1/trades?&symbol=' + document.getElementById("moneda").value + 'USDT&contractType=PERPETUAL'
+    const trades = 'https://fapi.binance.com/fapi/v1/trades?symbol=' + document.getElementById("moneda").value + 'USDT&contractType=PERPETUAL'
 
+    const precioActual = 'https://fapi.binance.com/fapi/v1/ticker/price?symbol=' + document.getElementById("moneda").value + 'USDT&contractType=PERPETUAL'
 
     fetch(endpoint)
         .then(respuesta => respuesta.json())
@@ -29,7 +30,10 @@ function iniciar() {
         .catch(e => console.log(e))
 
 
-
+    fetch(precioActual)
+        .then(respuesta => respuesta.json())
+        .then(datos => mostrarPrecio(datos))
+        .catch(e => console.log(e))
     //********************************************************************************* */
     fetch(trades)
         .then(respuesta => respuesta.json())
@@ -60,13 +64,22 @@ function iniciar() {
 
             }
 
-            document.getElementById("vendedores").innerHTML = '<h6>Cant&Vend</h6><hr>' + (summcompradores / myArray.length).toFixed(4) + '<h6>' + cc + '</h6>';
-            document.getElementById("compradores").innerHTML = '<h6>Cant&Comp</h6><hr>' + (summvendedores / myArray.length).toFixed(4) + '<h6>' + vv + '</h6>';;
+            document.getElementById("vendedores").innerHTML = '<h6>Cant&Vend</h6><hr>' + (summcompradores / myArray.length).toFixed(4) + ' ' + document.getElementById("moneda").value + '<h6>' + cc + '</h6>';
+            document.getElementById("compradores").innerHTML = '<h6>Cant&Comp</h6><hr>' + (summvendedores / myArray.length).toFixed(4) + ' ' + document.getElementById("moneda").value + '<h6>' + vv + '</h6>';;
             //return (summ / myArray.length).toFixed(4);
         }
 
         const compradores = Promediot(trade);
         const vendedores = Promediot(trade);
+
+
+    }
+
+    const mostrarPrecio = (precioActual) => {
+
+        let n = precioActual.price
+        document.getElementById("precio_actual").innerHTML = '<h6 id="precio">Precio actual =>' + '<span>' + '$ ' + new Intl.NumberFormat().format(n) + '<span>' + '</h6>';
+
 
 
     }

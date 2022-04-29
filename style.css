@@ -76,7 +76,15 @@ input {
     margin-top: 20px;
 }
 
+#precio {
+    color: rgb(2, 34, 64);
+    font-size: 14px;
+}
 
+#precio span {
+    font-size: 18px;
+    color: red;
+}
 
 button {
     text-decoration: none;
