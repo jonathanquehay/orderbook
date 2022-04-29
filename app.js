@@ -78,7 +78,7 @@ function iniciar() {
     const mostrarPrecio = (precioActual) => {
 
         let n = precioActual.price
-        document.getElementById("precio_actual").innerHTML = '<h6 id="precio">Precio actual =>' + '<span>' + '$ ' + new Intl.NumberFormat().format(n) + '<span>' + '</h6>';
+        document.getElementById("precio_actual").innerHTML = '<h6 id="precio">Precio actual => ' + '<span>' + '$ ' + new Intl.NumberFormat().format(n) + '<span>' + '</h6>';
 
 
 
