@@ -19,7 +19,7 @@ document.getElementById("calcular").addEventListener("click", iniciar)
 
 
 function iniciar() {
-    const endpoint = 'https://fapi.binance.com/fapi/v1/depth?symbol=' + document.getElementById("moneda").value + 'USDT&contractType=PERPETUAL&LIMIT='
+    const endpoint = 'https://fapi.binance.com/fapi/v1/depth?symbol=' + document.getElementById("moneda").value + 'USDT&contractType=PERPETUAL'
     fetch(endpoint)
         .then(respuesta => respuesta.json())
         .then(datos => mostrarData(datos))
@@ -27,7 +27,6 @@ function iniciar() {
 
 
     const mostrarData = (data) => {
-        console.log(data.bids[0])
         let body = ''
 
 
@@ -51,10 +50,8 @@ function iniciar() {
         const g = Promedio(data.bids.splice(3, 99));
         const h = Promedio(data.asks.splice(3, 99));
         const i = Promedio(data.bids.splice(4, 99));
-        const j = Promedio(data.bids.splice(4, 99));
+        const j = Promedio(data.asks.splice(4, 99));
 
-        console.log(a);
-        console.log(b);
 
 
         body +=
