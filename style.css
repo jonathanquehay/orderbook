@@ -9,7 +9,6 @@ html {
 }
 
 body {
-    min-height: 100vh;
     max-width: 400px;
     background-color: papayawhip;
     margin: 0 auto;
@@ -66,10 +65,10 @@ h3,
 }
 
 input {
-    color: blue;
-    width: 150px;
+    color: rgb(1, 49, 1);
+    width: 300px;
     height: 40px;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
     font-weight: bold;
 }
@@ -124,7 +123,7 @@ button:hover {
 }
 
 footer {
-    background: rgb(172, 172, 172);
+    background: rgb(210, 210, 210);
     padding: 15px;
     color: #444444;
     font-size: 12px;

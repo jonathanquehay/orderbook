@@ -1,4 +1,3 @@
-//Función para actualizar cada  segundos(5000 milisegundos)
 setInterval("iniciar()", 1000);
 
 window.onload = function () {
@@ -61,8 +60,8 @@ function iniciar() {
 
             }
 
-            document.getElementById("vendedores").innerHTML = (summcompradores / myArray.length).toFixed(4) + '<h6>' + cc + '</h6>';
-            document.getElementById("compradores").innerHTML = (summvendedores / myArray.length).toFixed(4) + '<h6>' + vv + '</h6>';;
+            document.getElementById("vendedores").innerHTML = '<h6>Cant&Vend</h6><hr>' + (summcompradores / myArray.length).toFixed(4) + '<h6>' + cc + '</h6>';
+            document.getElementById("compradores").innerHTML = '<h6>Cant&Comp</h6><hr>' + (summvendedores / myArray.length).toFixed(4) + '<h6>' + vv + '</h6>';;
             //return (summ / myArray.length).toFixed(4);
         }
 
