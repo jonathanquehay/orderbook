@@ -64,8 +64,8 @@ function iniciar() {
 
             }
 
-            document.getElementById("vendedores").innerHTML = '<h6>Cant&Vend</h6><hr>' + (summcompradores / myArray.length).toFixed(4) + ' ' + document.getElementById("moneda").value + '<h6>' + cc + '</h6>';
-            document.getElementById("compradores").innerHTML = '<h6>Cant&Comp</h6><hr>' + (summvendedores / myArray.length).toFixed(4) + ' ' + document.getElementById("moneda").value + '<h6>' + vv + '</h6>';;
+            document.getElementById("vendedores").innerHTML = '<h6>Cant&Vend</h6><hr>' + (summcompradores / myArray.length).toFixed(2) + ' ' + document.getElementById("moneda").value + '<h6>' + cc + '</h6>';
+            document.getElementById("compradores").innerHTML = '<h6>Cant&Comp</h6><hr>' + (summvendedores / myArray.length).toFixed(2) + ' ' + document.getElementById("moneda").value + '<h6>' + vv + '</h6>';;
             //return (summ / myArray.length).toFixed(4);
         }
 
