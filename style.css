@@ -21,6 +21,26 @@ h2, #titulos , button, div{
     margin-bottom: 14px;
 }
 
+#datos{
+    text-align: center;
+    padding: 50px;
+}
+
+#compradores{
+
+    padding: 0 auto;
+    text-align: left;
+    color: green;
+    font-size: 20px;
+}
+
+#vendedores{
+    text-align: right;
+    color: red;
+    padding: 0;
+    font-size: 20px;
+}
+
 input{
     color: blue;
     width: 150px;

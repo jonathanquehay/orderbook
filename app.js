@@ -20,17 +20,58 @@ document.getElementById("calcular").addEventListener("click", iniciar)
 
 function iniciar() {
     const endpoint = 'https://fapi.binance.com/fapi/v1/depth?symbol=' + document.getElementById("moneda").value + 'USDT&contractType=PERPETUAL'
+
+    const trades = 'https://fapi.binance.com/fapi/v1/trades?&symbol=' + document.getElementById("moneda").value + 'USDT&contractType=PERPETUAL'
+
+
     fetch(endpoint)
         .then(respuesta => respuesta.json())
         .then(datos => mostrarData(datos))
         .catch(e => console.log(e))
 
 
+
+    //********************************************************************************* */
+    fetch(trades)
+        .then(respuesta => respuesta.json())
+        .then(datos => mostrarTrades(datos))
+        .catch(e => console.log(e))
+
+
+
+    const mostrarTrades = (trade) => {
+
+
+        function Promediot(myArray) {
+            summcompradores = 0;
+            summvendedores = 0;
+            for (let i = 0; i < myArray.length; i++) {
+                if (myArray[i].isBuyerMaker == true) {
+
+                    summcompradores += Number(myArray[i].qty);
+
+                }
+                else {
+                    summvendedores += Number(myArray[i].qty);
+                }
+
+            }
+
+            document.getElementById("compradores").innerHTML = (summcompradores / myArray.length).toFixed(4);
+            document.getElementById("vendedores").innerHTML = (summvendedores / myArray.length).toFixed(4);
+            //return (summ / myArray.length).toFixed(4);
+        }
+
+        const compradores = Promediot(trade);
+        const vendedores = Promediot(trade);
+
+
+    }
+
+
+
     const mostrarData = (data) => {
         let body = ''
-
-
-
 
         function Promedio(myArray) {
             summ = 0;
