@@ -124,67 +124,8 @@ button:hover {
 }
 
 footer {
-    background: rgb(199, 196, 196);
+    background: rgb(172, 172, 172);
     padding: 15px;
-    color: #525252;
+    color: #444444;
     font-size: 12px;
-}
-
-#tit1 {
-    color: #000000;
-    text-transform: uppercase;
-    font-size: 24px;
-    text-align: center;
-    letter-spacing: 2px;
-
-    padding: 0;
-    margin: 0;
-}
-
-#tit1::before,
-#tit1::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-#tit1::before {
-    color: #800000;
-    animation: glitch-effect 3s infinite;
-}
-
-#tit1::after {
-    color: #76b65a;
-    animation: glitch-effect 2s infinite;
-}
-
-@keyframes glitch-effect {
-    0% {
-        left: -2px;
-        top: -2px;
-    }
-
-    25% {
-        left: 2px;
-        top: 0px;
-    }
-
-    50% {
-        left: -1px;
-        top: 2px;
-    }
-
-    75% {
-        left: 1px;
-        top: -1px;
-    }
-
-    100% {
-        left: 0px;
-        top: -2px;
-    }
 }
